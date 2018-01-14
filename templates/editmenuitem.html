@@ -1,23 +1,25 @@
-
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Menu Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
+  </head>
 
-<title>Edit Menu Item</title>
-</head>
-<body>
-<h2>Edit Menu Item</h2>
+  <body>
+    <div class="div-form">
+      <h1 class="form-title">Edit Menu Item</h1>
 
-<form action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id =item.id) }}" method="post">
+      <form class="form" action="{{ url_for('editMenuItem', restaurant_id = restaurant_id, menu_id =item.id) }}" method="post">
 
-<input type="text" size="30" name="name" placeholder="{{ item.name }}">
+        <input class="input" type="text" size="30" name="name" placeholder="{{ item.name }}">
 
-<input type="submit" value="Edit">
-
-<a href="{{ url_for('restaurantMenu', restaurant_id=item.restaurant_id) }}">Cancel</a>
-
-
-
-</form>
-
-</body>
+        <input class="form__btn" type="submit" value="Edit">
+        <span class="cancel__btn">
+          <a class="cancel__link" href="{{ url_for('restaurantMenu', restaurant_id=item.restaurant_id) }}">Cancel</a>
+        </span>
+      </form>
+    </div>
+  </body>
 </html>

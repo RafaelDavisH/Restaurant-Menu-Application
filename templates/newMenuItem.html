@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8">
+    <title>New Menu Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
+  </head>
+  <body>
+    <div class="div-form">
+      <h1 class="form-title">New Menu Item</h1>
 
-<title>New Menu Item</title>
-</head>
-<body>
-<h1>New Menu Item</h1>
+      <form class="form" action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method="post">
 
-<form action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method="post">
+        <p>Name:</p>
+        <input class="input"type="text" size="30" name="name">
 
-<p>Name:</p>
-<input type="text" size="30" name="name">
+        <input class="form__btn" type="submit" value="Create">
 
-<input type="submit" value="Create">
-
-</form>
-
-</body>
+      </form>
+    </div>
+  </body>
 </html>

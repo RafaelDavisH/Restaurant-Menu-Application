@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Delete Menu Item</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
   </head>
+  <body>
+    <div class="div-form">
+      <h3 class="form-title">Are you sure you want to delete {{ item.name }} ?</h3>
 
-<body>
-  <h2>Are you sure you want to delete {{ item.name }}</h2>
+      <form class="form" action="{{ url_for('deleteMenuItem', restaurant_id= item.restaurant_id, menu_id=item.id) }}" method="post">
 
-  <form action="{{ url_for('deleteMenuItem', restaurant_id= item.restaurant_id, menu_id=item.id) }}" method="post">
-
-    <input type="submit" value="Delete">
-
-    <a href="{{ url_for('restaurantMenu', menu_id=item.id, restaurant_id=item.restaurant_id) }}">Cancel</a>
-
-
-
-  </form>
-
-</body>
+        <input class="form__btn" class="submit-delete" type="submit" value="Delete">
+        <span class="cancel__btn">
+          <a class="cancel__link" href="{{ url_for('restaurantMenu', menu_id=item.id, restaurant_id=item.restaurant_id) }}">Cancel</a>
+        </span>
+      </form>
+    </div>
+  </body>
 </html>

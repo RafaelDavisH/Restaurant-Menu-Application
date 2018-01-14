@@ -1,4 +1,4 @@
-from flask import Flask , render_template , request, redirect, url_for, flash
+from flask import Flask , render_template , request, redirect, url_for, flash, jsonify
 app = Flask(__name__)
 
 
@@ -11,13 +11,24 @@ Base.metadata.bind=create_engine
 DBSession = sessionmaker(bind = engine)
 session = DBSession()
 
+#Making an API Endpoint (GET Request)
+@app.route('/restaurants/<int:restaurant_id>/menu/JSON/')
+def restaurantMenuJSON(restaurant_id):
+    restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
+    items = session.query(MenuItem).filter_by(restaurant_id = restaurant_id).all()
+    return jsonify(MenuItems=[i.serialize for i in items])
+
+@app.route('/restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON/')
+def restaurantMenuItemJson(restaurant_id, menu_id):
+    menuItem = session.query(MenuItem).filter_by( id = menu_id).one()
+    return jsonify(MenuItem = menuItem.serialize)
+
 @app.route('/')
 @app.route('/restaurants/<int:restaurant_id>/')
 def restaurantMenu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
     items = session.query(MenuItem).filter_by(restaurant_id = restaurant.id)
     return render_template('menu.html', restaurant=restaurant, items=items)
-
 
 @app.route('/restaurants/<int:restaurant_id>/new/', methods=['GET','POST'])
 def newMenuItem(restaurant_id):
@@ -28,7 +39,7 @@ def newMenuItem(restaurant_id):
         flash("new menu item created")
         return redirect(url_for('restaurantMenu', restaurant_id = restaurant_id))
     else:
-        return render_template('newMenuItem.html', restaurant_id = restaurant_id)
+        return render_template('newMenuItem.html', restaurant_id = restaurant_id,)
     return "page to create a new menu item. Task 1 Complete!"
 
 

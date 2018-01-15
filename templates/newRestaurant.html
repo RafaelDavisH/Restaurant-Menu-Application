@@ -2,23 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit Menu Item</title>
+    <title>New Restaurant</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
   </head>
-
   <body>
     <div class="div-form">
-      <h1 class="form-title">Edit Menu Item</h1>
+      <h1 class="form-title">New Restaurant</h1>
 
       <form class="form" action="#" method="post">
 
-        <input class="input" type="text" size="30" name="name" placeholder="{{ item.name }}">
+        <p>Name:</p>
+        <input class="input"type="text" size="30" name="name">
 
-        <input class="form__btn" type="submit" value="Edit">
-        <span class="cancel__btn">
-          <a class="cancel__link" href="#">Cancel</a>
-        </span>
+        <input class="form__btn" type="submit" value="Create">
+
       </form>
     </div>
   </body>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Restaurants Menu</title>
+    <title>Restaurants List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
   </head>
@@ -21,7 +21,7 @@
           {% endif %}
         {% endwith %}
 
-        <h1 class="restaurant-name">Restaurant Items</h1>
+        <h1 class="restaurant-name">Restaurant List</h1>
 
         <p class="create-new">
           <a class="create-new__item"href="#">Create New Item</a>
@@ -30,15 +30,11 @@
       </div>
 
       <div class="menu-div">
-      {% for i in items %}
+      {% for i in restaurants %}
 
         <div class="menu-items">
-          <h3 class="item-name">{{i.course}} -- {{i.name}}</h3>
 
-
-          <p class="item-description">{{i.description}}</p>
-
-          <p class="item-price">{{i.price}}</p>
+          <h3 class="item-name">{{i.name}}</h3>
 
           <ul class="item-links">
             <li>
@@ -46,7 +42,7 @@
             </li>
             </br>
             <li>
-              <a class="item-link__delete" href="#">Delete</a>
+              <a class="item-link__delete" href="# }}">Delete</a>
             </li>
           </ul>
 
@@ -56,6 +52,5 @@
       </div>
 
     </div>
-
   </body>
 </html>

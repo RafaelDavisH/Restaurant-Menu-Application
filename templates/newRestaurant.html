@@ -10,12 +10,15 @@
     <div class="div-form">
       <h1 class="form-title">New Restaurant</h1>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{url_for('newRestaurant')}}" method="POST">
 
         <p>Name:</p>
-        <input class="input"type="text" size="30" name="name">
+        <input class="new-input"type="text" size="30" name="name">
 
         <input class="form__btn" type="submit" value="Create">
+        <span class="cancel__btn">
+          <a class="cancel__link" href="{{url_for('showRestaurants')}}">Cancel</a>
+        </span>
 
       </form>
     </div>

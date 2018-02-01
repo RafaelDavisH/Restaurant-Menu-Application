@@ -5,10 +5,10 @@
     <title>Restaurants Menu</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0b748db671.js"></script>
   </head>
   <body>
     <div class="container">
-
       <div class="header">
 
         {% with messages = get_flashed_messages() %}
@@ -21,34 +21,47 @@
           {% endif %}
         {% endwith %}
 
-        <h1 class="restaurant-name">Restaurant Items</h1>
+        <h1 class="title">{{ restaurant.name }}</h1>
 
-        <p class="create-new">
-          <a class="create-new__item"href="#">Create New Item</a>
-        </p>
-
+        <ul class="header-menu-links">
+          <li>
+            <p class="rest-list">Restaurants List</p>
+            <a class="list"href="{{url_for('showRestaurants')}}">
+              <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <p class="cre-plus">Create New Restaurant</p>
+            <a class="plus" href="{{ url_for('newRestaurant') }}">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
       </div>
+
 
       <div class="menu-div">
       {% for i in items %}
 
         <div class="menu-items">
-          <h3 class="item-name">{{i.course}} -- {{i.name}}</h3>
 
+          <section class="block"></section>
+
+          <h3 class="item-name">{{i.course}} - {{i.name}}</h3>
 
           <p class="item-description">{{i.description}}</p>
 
           <p class="item-price">{{i.price}}</p>
 
-          <ul class="item-links">
-            <li>
-              <a class="item-link__edit" href="#">Edit</a>
-            </li>
-            </br>
-            <li>
-              <a class="item-link__delete" href="#">Delete</a>
-            </li>
-          </ul>
+
+          <a class="item-link__edit menu-edit" href="{{ url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = i.id) }}">
+            <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+          </a>
+
+          <a class="item-link__delete menu-delete" href="{{ url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id)}}">
+            <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>
+          </a>
+
 
         </div>
 
@@ -56,6 +69,5 @@
       </div>
 
     </div>
-
   </body>
 </html>

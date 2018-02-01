@@ -9,15 +9,15 @@
 
   <body>
     <div class="div-form">
-      <h1 class="form-title">Edit Menu Item</h1>
+      <h1 class="form-title">Edit Restaurant</h1>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{url_for('editRestaurant', restaurant_id = restaurant.id)}}" method="post">
 
-        <input class="input" type="text" size="30" name="name" placeholder="">
+        <input class="new-input" type="text" size="25" name="name" placeholder="{{restaurant.name}}">
 
         <input class="form__btn" type="submit" value="Edit">
         <span class="cancel__btn">
-          <a class="cancel__link" href="#">Cancel</a>
+          <a class="cancel__link" href="{{url_for('showRestaurants')}}">Cancel</a>
         </span>
       </form>
     </div>

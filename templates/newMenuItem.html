@@ -10,13 +10,36 @@
     <div class="div-form">
       <h1 class="form-title">New Menu Item</h1>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{url_for('newMenuItem', restaurant_id= restaurant_id)}}" method="post">
 
-        <p>Name:</p>
-        <input class="input"type="text" size="30" name="name">
+          <p class="input-title">Name: </p>
+          <input class="new-input"type="text" size="30" name="name">
+
+
+          <p class="input-title">Description: </p>
+          <input class="new-input"type="text" size="30" name="description">
+
+
+          <p class="input-title">Price: </p>
+          <input class="new-input "type="text" size="30" name="price">
+
+          <p class="input-title">Course: </p>
+          <div class="checkboxes">
+
+            <input class="check-input" type="checkbox" size="30" value="Appetizer"name="course"> <p class="check-option">Appetizer</p>
+
+            <input class="check-input" type="checkbox" size="30" value="Entree" name="course"> <p class="check-option">Entree</p>
+
+            <input class="check-input" type="checkbox" size="30" value="Dessert" name="course"> <p class="check-option">Dessert</p>
+
+            <input class="check-input" type="checkbox" size="30" value="Beverage" name="course"> <p class="check-option">Beverage</p>
+          </div>
+
 
         <input class="form__btn" type="submit" value="Create">
-
+        <span class="cancel__btn">
+          <a class="cancel__link" href="{{url_for('showMenu', restaurant_id=restaurant_id)}}">Cancel</a>
+        </span>
       </form>
     </div>
   </body>

@@ -8,13 +8,13 @@
   </head>
   <body>
     <div class="div-form">
-      <h3 class="form-title">Are you sure you want to delete ?</h3>
+      <h3 class="form-title">Are you sure you want to delete {{ restaurant.name}}?</h3>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{url_for('deleteRestaurant', restaurant_id= restaurant.id)}}" method="POST">
 
         <input class="form__btn" class="submit-delete" type="submit" value="Delete">
         <span class="cancel__btn">
-          <a class="cancel__link" href="#">Cancel</a>
+          <a class="cancel__link" href="{{url_for('showRestaurants')}}">Cancel</a>
         </span>
       </form>
     </div>

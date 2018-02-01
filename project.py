@@ -28,7 +28,7 @@ def restaurantList(restaurant_id):
     restaurants = session.query(Restaurant).all()
     return render_template('restaurants.html', restaurants=restaurants)
 
-    
+
 @app.route('/restaurants/<int:restaurant_id>/')
 def restaurantMenu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id = restaurant_id).one()
@@ -44,7 +44,7 @@ def newMenuItem(restaurant_id):
         flash("new menu item created")
         return redirect(url_for('restaurantMenu', restaurant_id = restaurant_id))
     else:
-        return render_template('newMenuItem.html', restaurant_id = restaurant_id,)
+        return render_template('newMenuItem.html', restaurant_id = restaurant_id)
     return "page to create a new menu item. Task 1 Complete!"
 
 

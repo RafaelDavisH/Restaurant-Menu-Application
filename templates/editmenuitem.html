@@ -11,13 +11,50 @@
     <div class="div-form">
       <h1 class="form-title">Edit Menu Item</h1>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{url_for('editMenuItem', restaurant_id= restaurant_id, menu_id = menu_id)}}" method="POST">
 
-        <input class="input" type="text" size="30" name="name" placeholder="{{ item.name }}">
+        <p class="input-title">Name: </p>
+        <input class="new-input"type="text" size="30" name="name" placeholder="{{item.name}}">
+
+
+        <p class="input-title">Description: </p>
+        <input class="new-input"type="text" size="30" name="description" placeholder="{{item.description}}">
+
+
+        <p class="input-title">Price: </p>
+        <input class="new-input "type="text" size="30" name="price" placeholder="{{item.price}}">
+
+        <p class="input-title">Course: </p>
+        <div class="checkboxes">
+
+        {% if item.course == 'Appetizer' %}
+          <input class="check-input" type="checkbox" size="30" value="Appetizer" checked name="course"><p class="check-option">Appetizer</p>
+        {% else %}
+          <input class="check-input" type="checkbox" size="30" value="Appetizer" name="course"><p class="check-option">Appetizer</p>
+        {% endif %}
+
+        {% if item.course == 'Entree' %}
+          <input class="check-input" type="checkbox" size="30" checked value="Entree" name="course"> <p class="check-option">Entree</p>
+        {% else %}
+          <input class="check-input" type="checkbox" size="30" checked value="Entree" name="course"> <p class="check-option">Entree</p>
+        {% endif %}
+
+        {% if item.course == 'Dessert' %}
+          <input class="check-input" type="checkbox" size="30" value="Dessert" checked name="course"> <p class="check-option">Dessert</p>
+        {% else %}
+          <input class="check-input" type="checkbox" size="30" value="Dessert" name="course"> <p class="check-option">Dessert</p>
+        {% endif %}
+
+        {% if item.course == 'Beverage' %}
+          <input class="check-input" type="checkbox" size="30" checked value="Beverage" name="course"> <p class="check-option">Beverage</p>
+        {% else %}
+          <input class="check-input" type="checkbox" size="30" value="Beverage" name="course"> <p class="check-option">Beverage</p>
+        {% endif %}
+        </div>
 
         <input class="form__btn" type="submit" value="Edit">
         <span class="cancel__btn">
-          <a class="cancel__link" href="#">Cancel</a>
+          <a class="cancel__link" href="{{url_for('showMenu', restaurant_id = restaurant_id)}}">Cancel</a>
         </span>
       </form>
     </div>

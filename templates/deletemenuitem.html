@@ -10,11 +10,11 @@
     <div class="div-form">
       <h3 class="form-title">Are you sure you want to delete {{ item.name }} ?</h3>
 
-      <form class="form" action="#" method="post">
+      <form class="form" action="{{ url_for('deleteMenuItem', restaurant_id =  restaurant_id, menu_id = item.id)}}" method="post">
 
         <input class="form__btn" class="submit-delete" type="submit" value="Delete">
         <span class="cancel__btn">
-          <a class="cancel__link" href="#">Cancel</a>
+          <a class="cancel__link" href="{{ url_for('showMenu', restaurant_id = restaurant_id)}}">Cancel</a>
         </span>
       </form>
     </div>

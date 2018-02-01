@@ -74,15 +74,14 @@ p {
   background: white url('../static/img/restaurnat_index.jpeg') center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: 40px repeat(auto-fit, minmax(100px, 1fr));
 }
 
 
 .flash-list-msg {
   grid-row: 1;
-  grid-column: 1/-1;
   border-radius: 5px;
-  border: solid 1px #51f377;
+  height: 40px;
   list-style: none;
   font-family: sans-serif;
   color: #1c3e24;
@@ -103,7 +102,7 @@ p {
   letter-spacing: 14px;
   margin-top: 60px;
   margin-bottom: 0;
-  grid-row: 1;
+  grid-row: 2;
 }
 
 .restaurant-div {
@@ -155,13 +154,16 @@ p {
 .plus,
 .list {
   margin: 16px 15px 0 6px;
+  color: #70a1ff;
 }
 
 
 
-.menu__links:hover,
-.menu__links:focus {
-  color: #70a1ff;
+.plus:hover,
+.plus:focus,
+.list:hover,
+.list:focus {
+  color: #3742fa;
 }
 /*   Items Menu   */
 
@@ -326,11 +328,12 @@ input[type=text]:focus {
 .new-input {
   grid-column: 2;
   margin: auto 0;
-  height: 25px;
+  height: 35px;
   padding-left: 5px;
   color: #16a085;
   border: none;
   background-color: #eaedf2;
+  font-size: 1em;
 }
 
 .checkboxes {

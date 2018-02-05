@@ -1,6 +1,14 @@
+/*
+*
+*    BLOCK
+*
+*/
+
+
 html {
   box-sizing: border-box;
 }
+
 
 *,
 *:before,
@@ -12,7 +20,6 @@ body {
   background-color: #fffffe;
   margin: 0;
 }
-
 
 
 h1,
@@ -55,10 +62,13 @@ p {
   grid-template-rows: minmax(300px, 2fr) auto;
 }
 
+
 .container > * {
   grid-column: 2;
   min-width: 0;
 }
+
+
 /*
 *
 *    MENU
@@ -105,16 +115,17 @@ p {
   grid-row: 2;
 }
 
+
 .restaurant-div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   grid-auto-rows: 75px;
-  /* grid-column: 2; */
   grid-row: 2;
   padding-bottom: 20px;
   margin-top: 50px;
 }
+
 
 .header-menu-links {
   text-align: right;
@@ -126,9 +137,12 @@ p {
   display: flex;
 }
 
+
 .header-menu-links > li {
   display: flex;
 }
+
+
 .block {
   grid-row: 1/-1;
   grid-column: 1/-1;
@@ -141,6 +155,7 @@ p {
   margin: 4px 5px;
   color: white;
 }
+
 
 .rest-list,
 .cre-plus {
@@ -165,6 +180,8 @@ p {
 .list:focus {
   color: #3742fa;
 }
+
+
 /*   Items Menu   */
 
 .menu-div {
@@ -172,7 +189,6 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  /* grid-column: 2; */
   grid-row: 2;
   padding-bottom: 20px;
   margin-top: 50px;
@@ -185,15 +201,18 @@ p {
   grid-template-rows: repeat(4, 1fr);
 }
 
+
 .menu-edit {
   grid-column: 4;
   grid-row: 2;
 }
 
+
 .menu-delete {
   grid-column: 4;
   grid-row: 3;
 }
+
 
 .restaurant-list {
   display: grid;
@@ -201,6 +220,7 @@ p {
   grid-template-rows: 1fr 1fr ;
   background-color: #fff;
 }
+
 
 .restaurant-name {
   grid-column: 2;
@@ -210,6 +230,7 @@ p {
   margin: auto 0;
   justify-content: center;
 }
+
 
 .restaurant-links {
   grid-column: 3;
@@ -223,14 +244,17 @@ p {
   padding: 0;
 }
 
+
 .item-name {
   grid-column: 2/-1;
   grid-row: 1;
 }
 
+
 .item-name-link {
   text-decoration: none;
 }
+
 
 .item-description {
   grid-column: 2;
@@ -258,6 +282,7 @@ p {
   margin: auto 0;
 }
 
+
 .item-link__delete:hover,
 .item-link__delete:focus,
 .item-link__edit:focus,
@@ -265,15 +290,18 @@ p {
   color: #70a1ff;
 }
 
+
 .restaurant-edit {
   grid-column: 3;
   grid-row: 1;
 }
 
+
 .restaurant-delete {
   grid-column: 3;
   grid-row: 2;
 }
+
 
 /*
 *
@@ -316,14 +344,17 @@ input[type=text]:focus {
   outline: none;
 }
 
+
 .input-div {
-  justify-content: space-between; */
+  justify-content: space-between;
   align-content: center;
 }
+
 
 .input-title {
   grid-column: 1;
 }
+
 
 .new-input {
   grid-column: 2;
@@ -336,6 +367,7 @@ input[type=text]:focus {
   font-size: 1em;
 }
 
+
 .checkboxes {
   grid-column: 2;
   display: grid;
@@ -344,26 +376,32 @@ input[type=text]:focus {
   margin-top: 20px;
 }
 
+
 .check-input {
   grid-column: 2;
 }
 
+
 .check-option {
   grid-column: 3;
   margin: 1px;
-
 }
+
+
 .form-title {
   grid-column: 3;
   grid-row: 2;
   margin: 10px;
 }
 
+
 input[type=submit] {
   outline: none;
   border: none;
   background: none;
 }
+
+
 .form__btn {
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
@@ -403,11 +441,12 @@ input[type=submit] {
   align-content:center;
 }
 
-
 .msg-title {
   grid-column: 3;
   grid-row: 2;
 }
+
+
 .msg {
   grid-column: 3;
   grid-row: 3;

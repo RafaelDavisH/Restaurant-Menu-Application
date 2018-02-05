@@ -1,3 +1,9 @@
 __pycache__
 *.pyc
 .vagrant
+catalog/
+forum/
+tournament/
+project.py
+webserver-1.py
+webserver.py

@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>New Menu Item</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i|Oswald:400,700" rel="stylesheet">
-  </head>
-  <body>
+{% extends "form.html" %}
+{% block content %}
     <div class="div-form">
       <h1 class="form-title">New Menu Item</h1>
 
@@ -42,5 +35,4 @@
         </span>
       </form>
     </div>
-  </body>
-</html>
+{% endblock %}
